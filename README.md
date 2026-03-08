@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://github.com/GyaneshSamanta/Gemini-for-Windows/releases">
-    <img src="https://img.shields.io/github/v/release/GyaneshSamanta/Gemini-for-Windows?style=for-the-badge&color=D43F9B" alt="Latest Release">
+    <img src="https://img.shields.io/github/v/tag/GyaneshSamanta/Gemini-for-Windows?style=for-the-badge&color=D43F9B&label=latest%20release" alt="Latest Release">
   </a>
   <a href="https://github.com/GyaneshSamanta/Gemini-for-Windows/releases">
     <img src="https://img.shields.io/github/downloads/GyaneshSamanta/Gemini-for-Windows/total?style=for-the-badge&logo=github&color=43216E" alt="GitHub downloads">
