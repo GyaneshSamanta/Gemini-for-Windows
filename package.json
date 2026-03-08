@@ -1,0 +1,46 @@
+{
+  "name": "gemini-for-windows",
+  "version": "1.0.0",
+  "description": "It does what the title says.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GyaneshSamanta/Gemini-for-Windows.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GyaneshSamanta/Gemini-for-Windows/issues"
+  },
+  "homepage": "https://github.com/GyaneshSamanta/Gemini-for-Windows#readme",
+  "devDependencies": {
+    "electron": "^40.8.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.8.3"
+  },
+  "build": {
+    "appId": "com.gyanesh.geminionwindows",
+    "productName": "gemini-on-windows",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "Assets/App logo.png"
+    },
+    "portable": {
+      "artifactName": "gemini-on-windows.exe"
+    }
+  }
+}

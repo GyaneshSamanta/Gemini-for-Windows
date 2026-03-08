@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gemini-on-windows</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load custom fonts based on requirements, maybe system font or Roboto -->
+</head>
+<body>
+    <div id="titlebar">
+        <div class="drag-region">
+            <img src="../Assets/App logo.png" alt="Logo" class="titlebar-logo">
+            <span class="titlebar-title">gemini-on-windows</span>
+        </div>
+        
+        <div class="titlebar-controls">
+            <!-- View Selector (Hover Menu) -->
+            <div class="layout-menu-container">
+                <button id="btn-layout" class="control-btn" title="Change Layout">⊞</button>
+                <div class="layout-dropdown" id="layout-dropdown">
+                    <div class="layout-option" data-layout="1" title="Single View">
+                        <div class="grid-icon grid-1"></div>
+                        <span>Single</span>
+                    </div>
+                    <div class="layout-option" data-layout="2" title="Dual View">
+                        <div class="grid-icon grid-2"></div>
+                        <span>Dual</span>
+                    </div>
+                    <div class="layout-option" data-layout="4" title="Quad View">
+                        <div class="grid-icon grid-4"></div>
+                        <span>Quad</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Always on Top Pin -->
+            <button id="btn-pin" class="control-btn" title="Always on Top">📌</button>
+            
+            <!-- Settings Gear -->
+            <button id="btn-settings" class="control-btn" title="Settings">⚙️</button>
+
+            <!-- Window Controls -->
+            <div class="window-controls">
+                <button id="btn-minimize" class="win-btn">─</button>
+                <button id="btn-maximize" class="win-btn">□</button>
+                <button id="btn-close" class="win-btn close-btn">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The actual content area where <webview> tags will be injected -->
+    <div id="content-area">
+        <!-- Overlay activated during drag to prevent webviews from stealing the mouse -->
+        <div id="drag-overlay" class="hidden"></div>
+    </div>
+
+    <!-- Offline Splash Screen -->
+    <div id="offline-splash" class="hidden">
+        <img src="../Assets/App logo.png" class="splash-logo" alt="Logo">
+        <h2>Waiting for connection...</h2>
+        <p>Please check your internet connection.</p>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button id="btn-close-settings">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-row">
+                    <label for="input-shortcut">Global Shortcut (e.g., CommandOrControl+Alt+G):</label>
+                    <input type="text" id="input-shortcut" value="CommandOrControl+Alt+G">
+                </div>
+                <div class="setting-row">
+                    <label for="chk-tray">Keep app in System Tray on close/minimize</label>
+                    <input type="checkbox" id="chk-tray">
+                </div>
+                <div class="setting-row">
+                    <label for="chk-startup">Run on Startup</label>
+                    <input type="checkbox" id="chk-startup">
+                </div>
+                <div class="setting-row">
+                    <label for="chk-hwaccel">Disable Hardware Acceleration (requires restart)</label>
+                    <input type="checkbox" id="chk-hwaccel">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-settings">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <span class="footer-credit">built with &lt;3 by Gyanesh Samanta</span>
+        <div class="footer-links">
+            <a href="#" data-url="https://www.linkedin.com/newsletters/gyanesh-on-product-6979386586404651008/">Newsletter</a> |
+            <a href="#" data-url="https://www.linkedin.com/in/gyanesh-samanta/">LinkedIn</a> |
+            <a href="#" data-url="https://github.com/GyaneshSamanta">GitHub</a> |
+            <a href="#" data-url="https://buymeachai.ezee.li/GyaneshOnProduct">Buy Me a Chai</a>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
