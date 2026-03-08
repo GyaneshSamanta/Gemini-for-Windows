@@ -32,7 +32,7 @@
 
 ### Download & Run (No Installation Required!)
 
-1. **Download** the latest release from the [**Releases Page**](../../releases).
+1. **Download** the latest release from the [**Releases Page**](https://github.com/GyaneshSamanta/Gemini-for-Windows/releases).
 2. **Extract** the ZIP file to any folder.
 3. **Run** `gemini-on-windows.exe` inside the extracted folder.
 
