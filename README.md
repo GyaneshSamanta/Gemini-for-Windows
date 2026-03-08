@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/github/v/tag/GyaneshSamanta/Gemini-for-Windows?style=for-the-badge&color=D43F9B&label=latest%20release" alt="Latest Release">
   </a>
   <a href="https://github.com/GyaneshSamanta/Gemini-for-Windows/releases">
-    <img src="https://img.shields.io/badge/platform-Windows-43216E?style=for-the-badge&logo=windows" alt="Platform: Windows">
+    <img src="https://img.shields.io/github/downloads/GyaneshSamanta/Gemini-for-Windows/total?style=for-the-badge&logo=github&color=43216E" alt="Total Downloads">
   </a>
   <a href="https://buymeachai.ezee.li/GyaneshOnProduct">
     <img src="https://buymeachai.ezee.li/assets/images/buymeachai-button.png" alt="Buy Me A Chai" height="28">
