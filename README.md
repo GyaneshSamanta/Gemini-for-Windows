@@ -1,141 +1,97 @@
-# Gemini-for-Windows Desktop
+# Gemini for Windows
+
+> **A native, frameless Windows desktop app for Google Gemini — with multi-pane chats, a global hotkey, and zero install friction.**
 
 <p align="center">
-  <img src="Assets/App logo.png" alt="Gemini-for-Windows Logo" width="128" height="128">
+  <img src="Assets/App logo.png" alt="Gemini for Windows logo" width="128" height="128">
 </p>
 
-<p align="center">
-  <strong>A native Windows desktop app for Google Gemini</strong>
-</p>
+![Electron](https://img.shields.io/badge/Electron-47848F?logo=electron&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D4?logo=windows&logoColor=white)
+![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue)
+
+[Download latest release](https://github.com/GyaneshSamanta/Gemini-for-Windows/releases) · [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct)
+
+## About
+
+- **What:** A standalone Windows desktop app that wraps Google Gemini in a native shell — frameless window, system tray, global hotkey, and side-by-side multi-chat panes.
+- **Who:** Designed and built solo by Gyanesh Samanta.
+- **When:** Shipped March 8, 2026.
+- **Where:** Personal product project, distributed as a portable `.exe` via GitHub Releases.
+- **Why:** Gemini-in-a-browser-tab is fine until you actually rely on it. You lose tab-stack focus, can't summon it with a keystroke, and can't easily run two parallel chats. This app fixes all three by treating Gemini as a first-class desktop tool.
+
+## The Story
+
+I kept finding myself doing the same little dance: Cmd-Tab to the browser, Cmd-Tab through twelve tabs to find the Gemini one, type, get pulled away, lose the tab again. The fix wasn't more discipline — it was a real desktop app.
+
+Gemini for Windows is an Electron shell over Google's web app, but with the affordances a desktop user actually wants. **`Ctrl+Alt+G` summons it from anywhere**, even mid-document — Gemini snaps to the foreground, ready to answer. **Multi-view layouts** let you run two or four Gemini sessions side by side in the same window, each sharing your login session, with draggable borders so you can size each pane to the conversation. **Persistent settings** keep the window always-on-top if you want, dock it to the system tray, and auto-launch on Windows boot.
+
+The app is portable: download the zip, extract, run. No installer, no admin rights, no telemetry middlemen. Pin the `.exe` to your taskbar and you're done.
+
+## Gallery
 
 <p align="center">
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-for-developers">For Developers</a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/GyaneshSamanta/Gemini-for-Windows/releases">
-    <img src="https://img.shields.io/github/v/tag/GyaneshSamanta/Gemini-for-Windows?style=for-the-badge&color=D43F9B&label=latest%20release" alt="Latest Release">
-  </a>
-  <a href="https://github.com/GyaneshSamanta/Gemini-for-Windows/releases">
-    <img src="https://img.shields.io/github/downloads/GyaneshSamanta/Gemini-for-Windows/total?style=for-the-badge&logo=github&color=43216E" alt="Total Downloads">
-  </a>
-  <a href="https://buymeachai.ezee.li/GyaneshOnProduct">
-    <img src="https://buymeachai.ezee.li/assets/images/buymeachai-button.png" alt="Buy Me A Chai" height="28">
-  </a>
+  <img src="Assets/App logo.png" width="200" alt="App icon" />
 </p>
 
 ---
 
-## 🚀 Quick Start
+## Tech Stack
 
-### Download & Run (No Installation Required!)
+- **Framework:** [Electron](https://www.electronjs.org/) `^40.8.0`
+- **Builder:** `electron-builder` (portable Windows target)
+- **Persistence:** `electron-store` (settings) + secure AppData session storage
+- **Auto-update:** `electron-updater`
+- **Frontend:** Vanilla HTML / CSS / JS — no framework bloat
 
-1. **Download** the latest release from the [**Releases Page**](https://github.com/GyaneshSamanta/Gemini-for-Windows/releases).
-2. **Extract** the ZIP file to any folder.
-3. **Run** `gemini-on-windows.exe` inside the extracted folder.
-
-That's it! No installation, no setup wizards. Just run and enjoy.
-
-> **Tip:** Pin `gemini-on-windows.exe` to your taskbar for quick access!
-
----
-
-## ✨ Key Features
-
-This application transforms the Gemini web experience into a powerful, deeply integrated Windows utility:
-
-- 🪟 **Multi-View Modes:** Why settle for one chat? Use the layout selector to work with Dual (2) or Quad (4) Gemini sessions simultaneously side-by-side in the same window, seamlessly sharing your login session.
-- 📐 **Resizable Grids:** Instantly resize any of the Dual and Quad layout panels by dynamically dragging the borders!
-- ⚡ **Global Shortcut (Ctrl+Alt+G):** Found something interesting? Just press `Ctrl+Alt+G`, and Gemini will immediately jump to the foreground to answer your query.
-- 🖼️ **Frameless Custom UI:** Enjoy a sleek frameless window design with a custom title bar, beautiful gradients, and a glowing custom footer.
-- ⚙️ **Persistent Settings:** Keep the app minimized in the System Tray, configure it to run on Startup automatically, and pin it Always On Top over other windows!
-
----
-
-## ✨ Full Feature List
-
-| Feature | Description |
-|---------|-------------|
-| 🪟 **Multi-View** | Work on up to 4 different Gemini chats simultaneously |
-| 📐 **Draggable Panels** | Drag the borders in Multi-View to resize your workflow |
-| ⚡ **Global Summon** | Hit `Ctrl+Alt+G` to Instantly summon the window anywhere |
-| 🖥️ **Native App** | Dedicated, frameless desktop app with custom window controls |
-| 🔐 **Persistent Login**| Stay signed in across sessions using secure AppData storage |
-| 📌 **Always on Top** | Pin the window above other applications |
-| 📥 **System Tray** | Minimize to tray to keep the app working quietly in the background |
-| 🚀 **Auto-Launch** | Configure the app to start when Windows boots |
-| ☕ **Support Me** | Support further development with **10 rs** via [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct) |
-
----
-
-## 💻 For Developers
-
-### Project Structure
+## Repo Structure
 
 ```
 Gemini-for-Windows/
-├── Assets/App logo.png      # App icon
-├── main.js                  # Electron main process
-├── preload.js               # Secure IPC bridge
-├── renderer/                # UI frontend
-│   ├── renderer.js          # Layout tracking and Webview manipulation
-│   ├── styles.css           # Styling
-│   └── index.html           # App container
-├── package.json             # Dependencies & build scripts
-└── README.md
+├── main.js              # Electron main process (window, tray, shortcuts)
+├── preload.js           # Secure IPC bridge
+├── renderer/
+│   ├── index.html       # App container with <webview> hosts
+│   ├── renderer.js      # Layout + webview manipulation
+│   └── styles.css       # Frameless UI
+├── Assets/
+│   └── App logo.png
+├── PRD/                 # Product requirements docs
+├── package.json         # Electron + builder config
+└── release/             # Build output (portable .exe)
 ```
 
-### Tech Stack
+## Getting Started
 
-- **[Electron](https://www.electronjs.org/)** - Windows application and `<webview>` framework.
-- **Vanilla JS/HTML/CSS** - Lightweight and lightning fast, without bloat.
+### Users — Quick start
 
-### Build from Source
+1. Grab the latest zip from the [Releases page](https://github.com/GyaneshSamanta/Gemini-for-Windows/releases).
+2. Extract anywhere.
+3. Run `gemini-on-windows.exe`.
+
+That's it — no installer. Pin to your taskbar for one-click access, or hit `Ctrl+Alt+G` from any app to summon it.
+
+### Developers — Build from source
 
 ```bash
-# Clone the repository
 git clone https://github.com/GyaneshSamanta/Gemini-for-Windows.git
 cd Gemini-for-Windows
-
-# Install dependencies
 npm install
 
-# Run in development mode
-npm start
-
-# Build portable app into /release folder
-npm run build
+npm start        # Run in dev
+npm run build    # Build portable .exe into ./release
 ```
 
-The built app will be in `release/gemini-on-windows.exe`.
+Output lands at `release/gemini-on-windows.exe`.
 
-### Creating a GitHub Release
+## Contributing
 
-1. Run `npm run build`
-2. Compress the `release/gemini-on-windows.exe` file inside a ZIP
-3. Go to repo → **Releases** → **Draft a new release**
-4. Create tag (e.g., `v1.0.0`), upload ZIP, publish!
+Issues and PRs welcome. Most-wanted next: configurable global shortcut, dark-mode title bar, more layout presets.
 
----
+## License
 
-## 📜 License
+[GPL-3.0](LICENSE).
 
-GPL-3.0 License - see [LICENSE](LICENSE) for details.
+## Credits
 
----
-
-<p align="center">
-  Built with ♥ by <a href="https://www.linkedin.com/in/gyanesh-samanta/">Gyanesh Samanta</a>
-</p>
-
-<p align="center">
-  <a href="https://buymeachai.ezee.li/GyaneshOnProduct">
-    <img src="https://buymeachai.ezee.li/assets/images/buymeachai-button.png" alt="Buy Me A Chai" width="200">
-  </a>
-</p>
-
-<p align="center">
-  <em>Supporters can contribute as little as 10 rs! ☕</em>
-</p>
+Built by [Gyanesh Samanta](https://www.linkedin.com/in/gyanesh-samanta/). If the app earns its keep, the [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct) jar funds future updates and signing certificates.
